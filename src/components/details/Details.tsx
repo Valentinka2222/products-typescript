@@ -10,7 +10,7 @@ type imageProps = {
 };
 
 const Details = () => {
-  const [zoomProduct]: Array<ProductInt> | Array<any> = useOutletContext();
+  const [zoomProduct]: Array<ProductInt> | Array<ProductInt> = useOutletContext();
   const { src, id, name, price }: ProductInt = zoomProduct[0];
   const imageProps: imageProps = {
     alt: 'Wristwatch by Ted Baker London',

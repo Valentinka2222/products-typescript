@@ -3,7 +3,7 @@ import { useGlobalState } from '../../store';
 import Product from '../product/Product';
 import { FixedSizeGrid as Grid } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
-import { RenderRowProps } from '../../interfaces';
+import { ProductInt, RenderRowProps } from '../../interfaces';
 import './products.scss';
 
 const Products: React.FC = () => {
@@ -21,7 +21,7 @@ const Products: React.FC = () => {
       />
     );
   };
-  const data: any = productsList.product;
+  const data: Array<ProductInt> = productsList.product;
   const length = data.length;
   const rowCount = Math.floor(data.length / itemPer);
   return (
