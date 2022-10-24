@@ -8,14 +8,14 @@ const { setGlobalState, useGlobalState } = createGlobalState({
   } as Partial<List>,
 });
 
-export const setProducts = (obj: ProductInt) => {
-  setGlobalState('list', (prev: any) => ({
+export const setProducts = (obj: [ProductInt] | undefined) => {
+  setGlobalState('list', prev => ({
     ...prev,
     product: obj,
   }));
 };
 export const setFavourite = (obj: ProductInt | undefined) => {
-  setGlobalState('list', (prev: any) => ({
+  setGlobalState('list', (prev: Partial<List>) => ({
     ...prev,
     favouriteList: [obj, ...prev.favouriteList],
   }));
