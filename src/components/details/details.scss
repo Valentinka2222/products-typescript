@@ -1,0 +1,58 @@
+.zoom {
+  display: flex;
+  font-size: 64px;
+  font-family: 'Poppins';
+  height: 448px;
+  margin-top: 160px;
+  align-items: center;
+  margin: auto;
+
+  &__image {
+    max-width: 448px;
+    max-height: 448px;
+    border-radius: 30px;
+    display: flex;
+    flex: 1;
+  }
+  &__name {
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 192px;
+    position: relative;
+    overflow: hidden;
+
+    height: 192px;
+    margin-bottom: 61px;
+  }
+  &__info {
+    margin-left: 136px;
+    width: 100%;
+    font-weight: 400;
+    line-height: 96px;
+    color: #414141;
+    display: flex;
+    flex: 1 0;
+    flex-direction: column;
+    align-content: space-between;
+  }
+  &__price {
+    display: flex;
+    font-weight: 500;
+    height: 96px;
+    line-height: 96px;
+  }
+}
+.zoom-icon {
+  display: flex;
+  width: 85.75px;
+  height: 85.75px;
+  border-radius: 15px;
+  background-color: rgba(255, 204, 38, 1);
+  margin-left: 302.12px;
+}
+.img {
+  max-width: 20em;
+  display: block;
+  margin: 0 auto;
+}

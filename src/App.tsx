@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ReactElement, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { setProducts, useGlobalState } from './store';
+import { getProductsList } from './getaway/getaway';
+import Layout from './components/layout/Layout';
+import Products from './components/products/Products';
+import Details from './components/details/Details';
+import PageNotFound from './components/PageNotFound/PageNotFound';
+import { List } from './interfaces';
 
-function App() {
+const App = (): ReactElement<List> => {
+  const list = useGlobalState as Partial<List>;
+  useEffect(() => {
+    getProductsList().then(res => setProducts((list.product = res)));
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="products" element={<Products />} />
+          <Route path="details" element={<Details />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Route>
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;
