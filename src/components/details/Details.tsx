@@ -6,7 +6,6 @@ import './details.scss';
 
 type imageProps = {
   alt: string;
-  isFluidWidth: boolean;
   src: string;
 };
 
@@ -15,7 +14,6 @@ const Details = () => {
   const { src, id, name, price }: ProductInt = zoomProduct[0];
   const imageProps: imageProps = {
     alt: 'Wristwatch by Ted Baker London',
-    isFluidWidth: true,
     src: `https://testbackend.nc-one.com${src}`,
   };
 
@@ -40,7 +38,7 @@ const Details = () => {
             <span className="zoom__name">{name}</span>
             <div className="zoom__price" data-id={id}>
               <span>{`$${price}`}</span>
-              <div data-id={IdleDeadline} className="zoom-icon">
+              <div data-id={id} className="zoom-icon">
                 <FavoriteIcon
                   data-id={id}
                   style={{
