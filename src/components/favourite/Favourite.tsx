@@ -76,11 +76,13 @@ const Favourite: React.FC<FavoiriteProps> = ({ setImageId }) => {
                           onClick={e => handleClick(e)}
                           data-id={id}
                         >
-                          <span className="favourite__list_item_name">{name}</span>
-                          <div className="favourite__list_item_description">
+                          <span data-id={id} className="favourite__list_item_name">
+                            {name}
+                          </span>
+                          <div data-id={id} className="favourite__list_item_description">
                             <span className="favourite__list_item_price">{`$${price}`}</span>
 
-                            <div className="favourite__list_item_icon-like ">
+                            <div data-id={id} className="favourite__list_item_icon-like ">
                               <FavoriteIcon style={styleIcon} />
                             </div>
                           </div>
