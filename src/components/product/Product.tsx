@@ -19,22 +19,26 @@ const Product: React.FC<FixedList> = ({ style, data, rowIndex, itemPer, columnIn
   const { id, src, name, price } = data[itemInd];
 
   return (
-    <div className="product" style={style} data-id={id} onClick={e => handleClick(e)}>
+    <div
+      className="product"
+      style={style}
+      data-id={id}
+      onClick={e => {
+        handleClick(e);
+        setIsLike(!isLike);
+      }}
+    >
       <div className="product__img">
         <img data-id={id} src={`https://testbackend.nc-one.com${src}`} alt="Image Product" />
       </div>
-      <div className="product__info">
-        <div className="product__name">{name}</div>
+      <div className="product__info" data-id={id}>
+        <div className="product__name" data-id={id}>
+          {name}
+        </div>
         <div className="product__price" data-id={id}>
           {`$${price}`}
 
-          <button
-            aria-controls="icon"
-            onClick={() => setIsLike(true)}
-            aria-haspopup="true"
-            data-id={id}
-            className="icon-like"
-          >
+          <button aria-controls="icon" aria-haspopup="true" data-id={id} className="icon-like">
             {isLike ? (
               <FavoriteIcon
                 id="icon"
