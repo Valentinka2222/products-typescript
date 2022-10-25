@@ -19,7 +19,7 @@ const Product: React.FC<FixedList> = ({ style, data, rowIndex, itemPer, columnIn
     }
     const eventId = e.target.dataset.id;
     const dataElement = data.find(el => el.id === Number(eventId));
-    setIsLike(true);
+
     changeColor(dataElement, isLike);
   };
   const { id, src, name, price } = data[itemInd];
@@ -34,7 +34,15 @@ const Product: React.FC<FixedList> = ({ style, data, rowIndex, itemPer, columnIn
         <div className="product__price" data-id={id}>
           {`$${price}`}
 
-          <button aria-controls="icon" aria-haspopup="true" data-id={id} className="icon-like">
+          <button
+            aria-controls="icon"
+            onClick={() => {
+              setIsLike(true);
+            }}
+            aria-haspopup="true"
+            data-id={id}
+            className="icon-like"
+          >
             {isLike ? (
               <FavoriteIcon
                 id="icon"
