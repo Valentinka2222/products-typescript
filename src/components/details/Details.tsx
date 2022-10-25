@@ -11,6 +11,9 @@ type imageProps = {
 
 const Details = () => {
   const [zoomProduct]: Array<ProductInt> | Array<ProductInt> = useOutletContext();
+  if (zoomProduct[0] === undefined) {
+    window.location.replace('http://localhost:3000/products');
+  }
   const { src, id, name, price }: ProductInt = zoomProduct[0];
   const imageProps: imageProps = {
     alt: 'Wristwatch by Ted Baker London',

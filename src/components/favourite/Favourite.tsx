@@ -21,6 +21,7 @@ const Favourite: React.FC<FavoiriteProps> = ({ setImageId }) => {
     width: '90%',
     height: '90%',
   };
+
   const handleClick = (e: React.SyntheticEvent<EventTarget>) => {
     if (!(e.target instanceof HTMLDivElement)) {
       return;
