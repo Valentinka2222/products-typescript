@@ -29,7 +29,7 @@ const Layout = () => {
           <NavLink to="products" className="navigation__action_link" data-link="products">
             Product List
           </NavLink>
-          <NavLink to="/" className="navigation__action_link" data-link="page">
+          <NavLink to="details" className="navigation__action_link" data-link="page">
             Page
           </NavLink>
         </div>
